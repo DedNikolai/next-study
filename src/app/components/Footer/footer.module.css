@@ -1,0 +1,9 @@
+.root {
+    height: 100px;
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+    padding: 10px 20px;
+    line-height: 100px;
+    text-align: right;
+}
+

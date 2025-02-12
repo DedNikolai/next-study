@@ -1,0 +1,20 @@
+@import url('./normalize.css');
+@import url('./variables.css');
+
+body {
+    background-color: var(--color-secondary, antiquewhite);
+    color: var(--color-main, black);
+}
+
+.main {
+  min-height: 80vh;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}

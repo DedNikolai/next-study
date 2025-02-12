@@ -1,0 +1,23 @@
+.root {
+    height: 80px;
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+    padding: 0 20px;
+    line-height: 80px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuItem {
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+.menuItem:hover {
+    text-decoration: underline;
+}
