@@ -1,11 +1,9 @@
 import { Post } from "@/app/types/post";
 import { Metadata } from "next";
 
-type Params = {
-    params: {
-        id: string
-    }
-}
+type Params = Promise<{
+  id: string
+}>
 
 async function getData(id: string): Promise<Post> {
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -21,8 +19,8 @@ async function getData(id: string): Promise<Post> {
   return response.json();
 }
 
-export async function generateMetadata({params}: Params): Promise<Metadata> {
-    const {id} = await params;
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { id } = await params;
     const post = await getData(id);
     return (
         {
@@ -31,8 +29,8 @@ export async function generateMetadata({params}: Params): Promise<Metadata> {
     )
 }
 
-export default async function BlogItemPage({params}: Params) {
-    const {id} = await params;
+export default async function BlogItemPage( {params }: { params: Params }) {
+    const { id } = await params;
     const post = await getData(id);
 
     return (
