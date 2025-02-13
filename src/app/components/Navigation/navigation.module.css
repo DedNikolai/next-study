@@ -21,3 +21,7 @@
 .menuItem:hover {
     text-decoration: underline;
 }
+
+.isActive {
+    text-decoration: underline;
+}
