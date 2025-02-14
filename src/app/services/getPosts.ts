@@ -1,7 +1,10 @@
 import { Post } from "../types/post";
 
+// const API_URL = 'https://jsonplaceholder.typicode.com';
+const API_URL = '/api';
+
 export async function getPosts(): Promise<Post []> {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    const response = await fetch(`${API_URL}/posts`, {
       next: {
         revalidate: 60
       }
@@ -11,7 +14,7 @@ export async function getPosts(): Promise<Post []> {
   }
 
   export async function getPostsBySearchParams(search: string) {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?q=${search}`, {
+    const response = await fetch(`${API_URL}/posts?q=${search}`, {
         next: {
           revalidate: 60
         }
