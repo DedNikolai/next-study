@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from './navigation.module.css';
 import {usePathname} from 'next/navigation';
+import { useSession, signOut } from "next-auth/react";
 
 type Navlink = {
     label: string;
@@ -15,6 +16,8 @@ type Props = {
 
 export default function Navigation({navLinks}: Props) {
     const pathName = usePathname();
+    const session = useSession();
+
 
     return (
         <menu className={styles.root}>
@@ -28,6 +31,27 @@ export default function Navigation({navLinks}: Props) {
                             <Link href={link.href}>{link.label}</Link>
                         </li>)
                 })
+            }
+            {
+                session?.data && 
+                <li className={`${styles.menuItem}`}>
+                    <Link href='/profile'>Profile</Link>
+                </li>    
+            }
+            {
+                session?.data ? 
+                <li className={`${styles.menuItem}`}>
+                    <Link 
+                        href='' 
+                        onClick={() => signOut({
+                                    callbackUrl: '/'
+                                })}>SignOut
+                    </Link>
+                </li>     
+                :
+                <li className={`${styles.menuItem}`}>
+                    <Link href='/api/auth/signin'>SignIn</Link>
+                </li>    
             }
         </ul>
     </menu>

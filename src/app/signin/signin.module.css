@@ -1,0 +1,12 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 300px;
+    padding: 0 20px;
+    text-align: center;
+}

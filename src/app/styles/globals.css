@@ -18,3 +18,10 @@ h1 {
 a:hover {
   text-decoration: underline;
 }
+
+input {
+  padding: 0;
+  margin: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}

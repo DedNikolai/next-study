@@ -1,0 +1,22 @@
+.root {
+    margin-top: 20px;
+}
+
+.formItem {
+    margin-top: 10px;
+}
+
+.formButton {
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.formInput {
+    width: 100%;
+    padding: 5px 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}

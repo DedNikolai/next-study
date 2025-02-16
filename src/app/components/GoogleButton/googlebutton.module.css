@@ -1,0 +1,7 @@
+.root {
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
