@@ -4,20 +4,13 @@ import Link from "next/link";
 import { useShallow } from "zustand/shallow";
 import { usePosts } from "@/app/store";
 import { useEffect } from "react";
+import { Post } from "@/app/types/post";
 // import { getPosts } from "../services/getPosts";
 
 
 
-export default function Posts() {
-    const [posts, loading, getAllPosts] = usePosts(
-            useShallow( state => [state.posts, state.loading, state.getAllPosts],)
-         )
+export default function Posts({posts}: {posts: Post[]}) {
 
-    useEffect(() => {
-        getAllPosts()
-    }, []);
-    
-    if (loading) return <h3>Loading posts.....</h3>
 
     return (
         <ul>

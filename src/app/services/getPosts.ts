@@ -1,20 +1,14 @@
+import { API_URL } from "../constants/app";
 import { Post } from "../types/post";
 
-// const API_URL = 'https://jsonplaceholder.typicode.com';
-const API_URL = '/api';
-
 export async function getPosts(): Promise<Post []> {
-    const response = await fetch(`${API_URL}/posts`, {
-      next: {
-        revalidate: 60
-      }
-    })
+    const response = await fetch(`${API_URL}/posts`)
   
     return response.json();
   }
 
   export async function getPostsBySearchParams(search: string) {
-    const response = await fetch(`${API_URL}/posts?q=${search}`, {
+    const response = await fetch(`${API_URL}/posts?title=${search}`, {
         next: {
           revalidate: 60
         }

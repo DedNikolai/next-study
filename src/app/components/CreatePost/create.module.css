@@ -1,5 +1,14 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .root {
     margin-top: 20px;
+    width: 500px;
+    
 }
 
 .formItem {
